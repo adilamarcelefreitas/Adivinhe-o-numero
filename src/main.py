@@ -1,5 +1,5 @@
 import random
-import 
+import time
 
 
 # Classe pai para os jogadores
@@ -26,7 +26,8 @@ class HumanPlayer(Player):
     def make_guess(self):
         while True:
             try:
-                # O jogador humano digita seu palpite
+                # O jogador humano digita seu 
+                #input('Você começa!')
                 bet = int(input('Player, digite seu palpite: '))
                 if 1 <= bet <= 100:
                     # Armazena o palpite válido na lista de palpites
@@ -67,7 +68,7 @@ def check_guess(player, target_number, max_attempts):
             print('Muito alto!')\
 
        # Introduzindo uma pausa de 1 segundo antes de alternar para o próximo jogador
-        time.sleep(2)
+        time.sleep(1)
 
         print()
         # Alternância entre o jogador e o computador
@@ -76,6 +77,7 @@ def check_guess(player, target_number, max_attempts):
     if attempts >= max_attempts:
         print('Fim de jogo! O número de tentativas máxima foi alcançada.')
         display_game_result(computer_player)
+        
 
 # Função para exibir o resumo da partida
 
@@ -98,8 +100,10 @@ def bet_resume(player):
 
 def main():
     target_number = start_game()
+    print()
     print('BEM VINDO AO GUESS THE NUMBER!')
-    print('O número foi sorteado. São quinze rodadas. Tente acertá-lo.')
+    print()
+    print('O número foi sorteado. São dez rodadas. Tente acertá-lo.')
     print('O Computador é o seu adversário.')
     print('Pressione Enter para começar ou digite qualquer outra coisa para sair.')
 
